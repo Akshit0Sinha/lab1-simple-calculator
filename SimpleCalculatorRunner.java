@@ -14,6 +14,16 @@ public class SimpleCalculatorRunner {
 			System.out.printf("%-15s: ", "Enter number/operator");
 			String i = in.nextLine();
 
+			if (i.equalsIgnoreCase("exit")) {
+				System.out.println("Calculator terminated.");
+				break;
+			}
+
+			if (i.isEmpty()) {
+				System.out.printf("%-15s | %-15s%n", "", "");
+				continue;
+			}
+
 			try {
 				double num = Double.parseDouble(i);
 				calculator.inputNumber(num);
